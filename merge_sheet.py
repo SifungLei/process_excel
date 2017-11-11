@@ -156,7 +156,7 @@ if __name__ == "__main__":
     postage_order_no = []
     for cell in cells:
         value = cell.value # 快递单号
-        price = 4.3 # 邮费
+        price = user_input.postage # 邮费
         cell_to_do = output_sheet.cell("l%d" % (cell.row))
         if value not in postage_order_no:
             print("行号 = %d, 快递单号 = %r, 第一次出现, 邮费 = %r" % (cell.row, value, price))

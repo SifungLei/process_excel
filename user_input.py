@@ -4,7 +4,10 @@
 用户输入的数据
 """
 # 原文件名
-file_name_original = "远1_测试金额.xlsx"
+file_name_original = "远2 2017-9.xlsx"
+
+# 邮费
+postage = 4.3
 
 # 原sheet名
 sheet_name_original = "Sheet1"
