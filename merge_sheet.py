@@ -14,7 +14,7 @@ def cal_column_cell(sheet, col_str, from_row):
     from_row为从第几行开始处理
     """
     index = from_row - 1
-    ret = sheet.columns[openpyxl.cell.column_index_from_string(col_str) - 1][index:]
+    ret = sheet.columns[openpyxl.utils.column_index_from_string(col_str) - 1][index:]
     return ret
 
 # 单元格，通过VLOOKUP来计算
@@ -106,7 +106,7 @@ if __name__ == "__main__":
     column_name = ["订单编号","店铺名称","商家编码","价格","购买数量","商品金额合计","快递公司","快递单号","补快递差价","赠送费","加礼盒费","邮费","卖家备注","买家留言","收货地址","付款时间","订单成本"]
     column_cnt = len(column_name)
     for i in range(0, column_cnt):
-        cell_to_do = output_sheet.cell("%s1" % (openpyxl.cell.get_column_letter(i + 1)))
+        cell_to_do = output_sheet.cell("%s1" % (openpyxl.utils.get_column_letter(i + 1)))
         cell_to_do.value = column_name[i]
 
     # 订单编号
@@ -117,7 +117,7 @@ if __name__ == "__main__":
     # sys.exit(0)
 
     # 店铺名称
-    shop_name = wb["Sheet3"].columns[openpyxl.cell.column_index_from_string("aa") - 1][1].value
+    shop_name = wb["Sheet3"].columns[openpyxl.utils.column_index_from_string("aa") - 1][1].value
     if shop_name == None or len(shop_name) == 0:
         print("error,店铺名称为空")
         sys.exit(0)

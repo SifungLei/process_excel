@@ -277,12 +277,12 @@ def cal_full_cnt_by_type(type_str):
 # 判断列号是否存在
 def check_column_exist(column_index, column_cnt):
     if column_index >= column_cnt:
-        print("列号%s不存在" % (openpyxl.cell.get_column_letter(column_index + 1)))
+        print("列号%s不存在" % (openpyxl.utils.get_column_letter(column_index + 1)))
         sys.exit(0)
 
 # 通过列号，计算该列所有数据的单元格
 def cal_all_cell_by_column_str(column_str, column_cnt):
-    col_index = openpyxl.cell.column_index_from_string(column_str) - 1
+    col_index = openpyxl.utils.column_index_from_string(column_str) - 1
     check_column_exist(col_index, column_cnt)
     all_cell = ws.columns[col_index]
     return all_cell
